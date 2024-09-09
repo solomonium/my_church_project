@@ -1,0 +1,26 @@
+{
+    "sourceFile": "backend/models/user_models.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1725822802590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725823920508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import mongoose from 'mongoose';\n \n const newUserSchema = mongoose.Schema({\n firstName: {\n-    type: String\n+    type: String,\n+    required: true\n }\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725824284220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,22 @@\n const newUserSchema = mongoose.Schema({\n firstName: {\n     type: String,\n     required: true\n+},\n+lastName: {\n+    type: String,\n+    required: true\n+}, \n+email: {\n+    type: String,\n+    required: true\n+},\n+dob: {\n+    type: String,\n+    required: true\n+},\n+password: {\n+    type: String,\n+    required: true\n }\n });\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1725822802590,
+            "name": "Commit-0",
+            "content": "import mongoose from 'mongoose';\nimport { type } from 'os';\n\nconst newUserSchema = mongoose.Schema({\nfirstName: {\n    type: String\n}\n});"
+        }
+    ]
+}

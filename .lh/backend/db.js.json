@@ -1,0 +1,30 @@
+{
+    "sourceFile": "backend/db.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1725821489859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725821501065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import mongoose from 'mongoose';\n \n-export const connectB = async () => {\n+export const connectDB = async () => {\n     try {\n         const conn = await mongoose.connect(process.env.MONGO_URI)\n         console.log(`MongoDB Conneted: ${conn.connection.host}`)\n     } catch (error) {\n"
+                },
+                {
+                    "date": 1725821813309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n import mongoose from 'mongoose';\n \n export const connectDB = async () => {\n     try {\n-        const conn = await mongoose.connect(process.env.MONGO_URI)\n-        console.log(`MongoDB Conneted: ${conn.connection.host}`)\n+        const conn = await mongoose.connect(process.env.MONGO_URI);\n+        console.log(`MongoDB Conneted: ${conn.connection.host}`);\n     } catch (error) {\n-        \n+        console.error(`Error: ${error.message}`);\n+        process.exit(1);\n     }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725822094327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n export const connectDB = async () => {\n     try {\n         const conn = await mongoose.connect(process.env.MONGO_URI);\n-        console.log(`MongoDB Conneted: ${conn.connection.host}`);\n+        console.log(`MongoDB Connected: ${conn.connection.host}`);\n     } catch (error) {\n         console.error(`Error: ${error.message}`);\n         process.exit(1);\n     }\n"
+                }
+            ],
+            "date": 1725821489859,
+            "name": "Commit-0",
+            "content": "import mongoose from 'mongoose';\n\nexport const connectB = async () => {\n    try {\n        const conn = await mongoose.connect(process.env.MONGO_URI)\n        console.log(`MongoDB Conneted: ${conn.connection.host}`)\n    } catch (error) {\n        \n    }\n}"
+        }
+    ]
+}

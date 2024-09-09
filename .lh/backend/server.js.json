@@ -1,0 +1,122 @@
+{
+    "sourceFile": "backend/server.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 26,
+            "patches": [
+                {
+                    "date": 1725817090374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725817404135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import express from 'express';\n \n const app = express();\n \n-app.listen(5000, () => {\n+app.listen(3000, () => {\n     console.log('Server started at http://localhost:5000')\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725817428495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n const app = express();\n \n app.listen(3000, () => {\n-    console.log('Server started at http://localhost:5000')\n+    console.log('Server started at http://localhost:3000')\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725817771572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n const app = express();\n \n app.listen(3000, () => {\n-    console.log('Server started at http://localhost:3000')\n+    console.log('Server started at http://localhost:3000 my name')\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725817862241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n const app = express();\n \n app.listen(3000, () => {\n-    console.log('Server started at http://localhost:3000 my name')\n+    console.log('Server started at http://localhost:3000')\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725818380901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,11 @@\n import express from 'express';\n \n const app = express();\n \n+app.get(\"/\", (req, res) => {\n+    res.send(\"Server is ready\")\n+});\n+\n app.listen(3000, () => {\n     console.log('Server started at http://localhost:3000')\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725818411343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n const app = express();\n \n app.get(\"/\", (req, res) => {\n-    res.send(\"Server is ready\")\n+    res.send(\"Server is ready1234\")\n });\n \n app.listen(3000, () => {\n     console.log('Server started at http://localhost:3000')\n"
+                },
+                {
+                    "date": 1725818535951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n const app = express();\n \n app.get(\"/\", (req, res) => {\n-    res.send(\"Server is ready1234\")\n+    res.send(\"Server is ready\")\n });\n \n app.listen(3000, () => {\n     console.log('Server started at http://localhost:3000')\n"
+                },
+                {
+                    "date": 1725819404910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,7 @@\n });\n \n app.listen(3000, () => {\n     console.log('Server started at http://localhost:3000')\n-})\n\\ No newline at end of file\n+})\n+\n+// xIMfTl8D1mhXVS4U\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725819933629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,4 @@\n app.listen(3000, () => {\n     console.log('Server started at http://localhost:3000')\n })\n \n-// xIMfTl8D1mhXVS4U\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725820700284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,10 @@\n app.get(\"/\", (req, res) => {\n     res.send(\"Server is ready\")\n });\n \n+console.log(process.env.MONGO_URI)\n+\n app.listen(3000, () => {\n     console.log('Server started at http://localhost:3000')\n })\n \n"
+                },
+                {
+                    "date": 1725820707584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n app.get(\"/\", (req, res) => {\n     res.send(\"Server is ready\")\n });\n \n-console.log(process.env.MONGO_URI)\n+console.log(process.env.MOMGO_URI)\n \n app.listen(3000, () => {\n     console.log('Server started at http://localhost:3000')\n })\n"
+                },
+                {
+                    "date": 1725820797082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n import express from 'express';\n+import dotenv from 'dotenv';\n \n+dotenv.config();\n+\n const app = express();\n \n+\n app.get(\"/\", (req, res) => {\n     res.send(\"Server is ready\")\n });\n \n"
+                },
+                {
+                    "date": 1725820823843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n+import dotenv from 'dotenv';\n import express from 'express';\n-import dotenv from 'dotenv';\n \n dotenv.config();\n \n const app = express();\n@@ -9,9 +9,9 @@\n app.get(\"/\", (req, res) => {\n     res.send(\"Server is ready\")\n });\n \n-console.log(process.env.MOMGO_URI)\n+console.log(process.env.MONGO_URI)\n \n app.listen(3000, () => {\n     console.log('Server started at http://localhost:3000')\n })\n"
+                },
+                {
+                    "date": 1725820838307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,14 +4,14 @@\n dotenv.config();\n \n const app = express();\n \n+console.log(process.env.MONGO_URI)\n \n app.get(\"/\", (req, res) => {\n     res.send(\"Server is ready\")\n });\n \n-console.log(process.env.MONGO_URI)\n \n app.listen(3000, () => {\n     console.log('Server started at http://localhost:3000')\n })\n"
+                },
+                {
+                    "date": 1725821021894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n dotenv.config();\n \n const app = express();\n \n-console.log(process.env.MONGO_URI)\n+console.log(process.env.MONGO_URI);\n \n app.get(\"/\", (req, res) => {\n     res.send(\"Server is ready\")\n });\n"
+                },
+                {
+                    "date": 1725821915440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import dotenv from 'dotenv';\n import express from 'express';\n+import { connectDB } from './db';\n \n dotenv.config();\n \n const app = express();\n@@ -12,7 +13,8 @@\n });\n \n \n app.listen(3000, () => {\n+    connectDB();\n     console.log('Server started at http://localhost:3000')\n })\n \n"
+                },
+                {
+                    "date": 1725821964938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import dotenv from 'dotenv';\n import express from 'express';\n-import { connectDB } from './db';\n+import { connectDB } from './db.js';\n \n dotenv.config();\n \n const app = express();\n"
+                },
+                {
+                    "date": 1725822215160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,8 @@\n dotenv.config();\n \n const app = express();\n \n-console.log(process.env.MONGO_URI);\n-\n app.get(\"/\", (req, res) => {\n     res.send(\"Server is ready\")\n });\n \n"
+                },
+                {
+                    "date": 1725829908194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,13 @@\n dotenv.config();\n \n const app = express();\n \n-app.get(\"/\", (req, res) => {\n-    res.send(\"Server is ready\")\n+app.post(\"/\", async (req, res) => {\n+    const user = req.body;\n+    if (!user.firstName || !user.lastName || !user.email || !user.dob || !user.password){\n+        res.statusCode(400).json({success: false, message: \"Provide all fields\"})\n+    };\n });\n \n \n app.listen(3000, () => {\n"
+                },
+                {
+                    "date": 1725830108858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,15 @@\n dotenv.config();\n \n const app = express();\n \n-app.post(\"/\", async (req, res) => {\n+app.post(\"/user\", async (req, res) => {\n     const user = req.body;\n     if (!user.firstName || !user.lastName || !user.email || !user.dob || !user.password){\n-        res.statusCode(400).json({success: false, message: \"Provide all fields\"})\n+        res.statusCode(400).json({success: false, message: \"Please provide all fields\"})\n     };\n+\n+    const newUser = new NewUser(user);\n });\n \n \n app.listen(3000, () => {\n"
+                },
+                {
+                    "date": 1725830760763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,13 +7,21 @@\n const app = express();\n \n app.post(\"/user\", async (req, res) => {\n     const user = req.body;\n+\n     if (!user.firstName || !user.lastName || !user.email || !user.dob || !user.password){\n-        res.statusCode(400).json({success: false, message: \"Please provide all fields\"})\n-    };\n+        res.status(400).json({success: false, message: \"Please provide all fields\"})\n+    }\n \n     const newUser = new NewUser(user);\n+\n+    try {\n+        await newUser.save();\n+        res.status(200).json({success: true, data: newUser})\n+    } catch (error) {\n+        \n+    }\n });\n \n \n app.listen(3000, () => {\n"
+                },
+                {
+                    "date": 1725830875730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,12 @@\n     const newUser = new NewUser(user);\n \n     try {\n         await newUser.save();\n-        res.status(200).json({success: true, data: newUser})\n+        res.status(200).json({success: true, data: newUser});\n     } catch (error) {\n-        \n+        console.error(`Error in creating user ${error.message}`);\n+        res.status(500).json({success: false, message: \"Server Error\"})\n     }\n });\n \n \n"
+                },
+                {
+                    "date": 1725831825845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,10 @@\n dotenv.config();\n \n const app = express();\n \n+app.use(express.json())\n+\n app.post(\"/user\", async (req, res) => {\n     const user = req.body;\n \n     if (!user.firstName || !user.lastName || !user.email || !user.dob || !user.password){\n"
+                },
+                {
+                    "date": 1725831945995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import dotenv from 'dotenv';\n import express from 'express';\n import { connectDB } from './db.js';\n+import {NewUser} from './models.user_models.js'\n \n dotenv.config();\n \n const app = express();\n"
+                },
+                {
+                    "date": 1725831967929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import dotenv from 'dotenv';\n import express from 'express';\n import { connectDB } from './db.js';\n-import { NewUser } from './models.user_models.js';\n+import { NewUser } from './models/user_models.js';\n \n dotenv.config();\n \n const app = express();\n"
+                },
+                {
+                    "date": 1725832083223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import dotenv from 'dotenv';\n import express from 'express';\n import { connectDB } from './db.js';\n-import { NewUser } from './models/user_models.js';\n+// import { NewUser } from './models/user_models.js';\n \n dotenv.config();\n \n const app = express();\n"
+                }
+            ],
+            "date": 1725817090373,
+            "name": "Commit-0",
+            "content": "import express from 'express';\n\nconst app = express();\n\napp.listen(5000, () => {\n    console.log('Server started at http://localhost:5000')\n})"
+        }
+    ]
+}
